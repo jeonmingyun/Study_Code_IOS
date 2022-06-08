@@ -1,9 +1,9 @@
-/*
-See LICENSE folder for this sample’s licensing information.
-
-Abstract:
-A view showing a list of landmarks.
-*/
+//
+//  LandmarkList.swift
+//  Ex_Landmarks
+//
+//  Created by jjglobal on 2022/06/08.
+//
 
 import SwiftUI
 
@@ -11,9 +11,9 @@ struct LandmarkList: View {
     var body: some View {
         NavigationView {
             List(landmarks) { landmark in
-                NavigationLink {
+                NavigationLink { // 클릭시
                     LandmarkDetail(landmark: landmark)
-                } label: {
+                } label: { // 클릭 view
                     LandmarkRow(landmark: landmark)
                 }
             }
@@ -24,10 +24,12 @@ struct LandmarkList: View {
 
 struct LandmarkList_Previews: PreviewProvider {
     static var previews: some View {
-        ForEach(["iPhone SE (2nd generation)", "iPhone XS Max"], id: \.self) { deviceName in
-            LandmarkList()
-                .previewDevice(PreviewDevice(rawValue: deviceName))
-                .previewDisplayName(deviceName)
+        // 여러 디바이스의 preview를 한번에 볼 수 있음
+        ForEach(["iPhone SE (2nd generation)", "iPhone 12"], id: \.self) { deviceName in
+                    LandmarkList()
+                        .previewDevice(PreviewDevice(rawValue: deviceName))
+                        .previewDisplayName(deviceName)
         }
+        .previewDevice("iPhone 13 Pro Max")
     }
 }

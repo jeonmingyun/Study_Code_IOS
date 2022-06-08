@@ -8,8 +8,10 @@
 import SwiftUI
 
 struct CircleImage: View {
+    var image : Image
+    
     var body: some View {
-        Image("turtlerock") // Assets에 등록된 res이름
+        image
             .clipShape(Circle())
             .shadow(radius: 7)
     }
@@ -17,6 +19,7 @@ struct CircleImage: View {
 
 struct CircleImage_Previews: PreviewProvider {
     static var previews: some View {
-        CircleImage()
+        // Image("turtlerock") : Assets에 등록된 res이름
+        CircleImage(image: Image("turtlerock"))
     }
 }

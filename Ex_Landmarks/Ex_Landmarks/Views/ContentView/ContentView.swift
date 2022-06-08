@@ -12,38 +12,7 @@ import SwiftUI
 struct ContentView: View {
     // body는 하나의 view만 반환하기 때문에 stack으로 감싸 하나의 view로 만들어준다
     var body: some View {
-        // Vstack: 수직정렬, HStack: 수평정렬, ZStack: 겹침
-        VStack {
-            MapView()
-                .frame(height: 300)
-            
-            CircleImage()
-                .offset(y: -130)
-                .padding(.bottom, -130.0)
-            
-            VStack(alignment: .leading) { // 왼쪽정렬 (.leading)
-                Text("Turtle Rock")
-                    .font(.title)
-                    .foregroundColor(.black)
-                
-                HStack {
-                    Text("Joshua Tree National Park")
-                    Spacer()
-                    Text("California")
-                }
-                .font(.subheadline) // Text 공통 속성
-                .foregroundColor(.secondary)
-                
-                Divider()
-                
-                Text("About Turtle Rock")
-                    .font(.title2)
-                Text("Descriptive text goes here.")
-            }
-            .padding()
-            
-            Spacer() // 하단에 Spacer를 주어 상단 정렬
-        }
+       LandmarkList()
     }
 }
 
