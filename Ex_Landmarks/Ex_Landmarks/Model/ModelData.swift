@@ -15,6 +15,7 @@ final class ModelData: ObservableObject {
     @Published var landmarks: [Landmark] = load("landmarkData.json")
     // hikeData는 수정하지 않을 거기 때문에 @Published 속성으로 표기하지 않음
     var hikes: [Hike] = load("hikeData.json")
+    @Published var profile = Profile.default
     
     var features: [Landmark] {
         landmarks.filter { $0.isFeatured }
