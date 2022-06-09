@@ -8,7 +8,13 @@
 import SwiftUI
 
 struct LandmarkDetail: View {
+    @EnvironmentObject var modelData: ModelData
     var landmark: Landmark
+    
+    // 모델 데이터와 비교하여 입력 랜드마크의 인덱스를 계산
+    var landmarkIndex: Int {
+        modelData.landmarks.firstIndex(where: {$0.id == landmark.id})!
+    }
     
     var body: some View {
         // Vstack: 수직정렬, HStack: 수평정렬, ZStack: 겹침
@@ -22,9 +28,11 @@ struct LandmarkDetail: View {
                 .padding(.bottom, -130.0)
             
             VStack(alignment: .leading) { // 왼쪽정렬 (.leading)
-                Text(landmark.name)
-                    .font(.title)
-                    .foregroundColor(.black)
+                HStack {
+                    Text(landmark.name)
+                        .font(.title)
+                    FavoriteButton(isSet: $modelData.landmarks[landmarkIndex].isFavorite)
+                }
                 
                 HStack {
                     Text(landmark.park)
@@ -50,7 +58,10 @@ struct LandmarkDetail: View {
 }
 
 struct LandmarkDetail_Previews: PreviewProvider {
+    static let modelData = ModelData()
+    
     static var previews: some View {
-        LandmarkDetail(landmark: landmarks[0])
+        LandmarkDetail(landmark: ModelData().landmarks[0])
+            .environmentObject(modelData)
     }
 }
