@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct FavoriteButton: View {
-    // 해당 view 내에서 수행된 변경사항은 데이터 원본으로 전파된다
+    // 다른 뷰에서 @State 속성으로 선언된 프로퍼티를 사용한다면 @Binding 속성을 사용
     @Binding var isSet: Bool
     
     var body: some View {

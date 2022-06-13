@@ -17,15 +17,27 @@ struct ProfileHost: View {
     var body: some View {
         VStack(alignment: .leading, spacing: 20) {
             HStack {
+                if editMode?.wrappedValue == .active {
+                    Button("Cancel") {
+                        draftProfile = modelData.profile
+                        editMode?.animation().wrappedValue = .inactive
+                    }
+                }
                 Spacer()
                 EditButton()
             }
             
-            // 수정 불가 상태
+            // 수정 불가 상태, EditButton 클릭시 상태 변경
             if editMode?.wrappedValue == .inactive {
                 ProfileSummary(profile: modelData.profile)
             } else { // 수정 가능 상태
-                Text("Profile Editor")
+                ProfileEditor(profile: $draftProfile)
+                    .onAppear { // view가 나타날때 action
+                        draftProfile = modelData.profile
+                    }
+                    .onDisappear { // view가 없어질때 action
+                        modelData.profile = draftProfile
+                    }
             }
         }
         .padding()

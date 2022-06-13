@@ -32,6 +32,10 @@ struct Landmark: Hashable, Codable, Identifiable {
     var image: Image {
         Image(imageName)
     }
+    var featureImage: Image? {
+        // featureImage는 기본 이미지와 다른 사이즈의 이미지를 사용함
+        isFeatured ? Image(imageName + "_feature") : nil
+    }
     
     private var coordinates: Coordinates
     // MapKit 프레임워크와 상호작용하기 편하게 변경

@@ -11,8 +11,8 @@ import SwiftUI
 // @main은 앱의 진입점을 식별한다
 @main
 struct Ex_LandmarksApp: App {
-    //@StateObject : 앱 수명 동안 한 번만 ObserverObject 객체를 초기화한다.
-    @StateObject private var modelData = ModelData()
+    //@StateObject : 앱 수명 동안 한 번만 ObserverObject 객체를 초기화한다. App객체에서 사용됨
+    @StateObject private var modelData = ModelData  ()
     
     // body속성은 하나 이상의 장면을 반환
     var body: some Scene {
