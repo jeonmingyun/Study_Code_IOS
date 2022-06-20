@@ -20,6 +20,7 @@ struct ContentView: View {
     // body는 하나의 view만 반환하기 때문에 stack으로 감싸 하나의 view로 만들어준다
     var body: some View {
         TabView(selection: $selection) {
+            
             CategoryHome()
                 .tabItem {
                     Label("Featured", systemImage: "star")
