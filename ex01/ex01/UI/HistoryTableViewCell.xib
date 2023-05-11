@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="84" id="2s1-y6-QMg" customClass="HistoryTableViewCell" customModule="ex01" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="393" height="84"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="2s1-y6-QMg" id="Biq-i4-ELe">
+                <rect key="frame" x="0.0" y="0.0" width="393" height="84"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="history_icon" translatesAutoresizingMaskIntoConstraints="NO" id="Y9K-8f-zun">
+                        <rect key="frame" x="20" y="27" width="30" height="30"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="30" id="72Q-51-jfx"/>
+                            <constraint firstAttribute="height" constant="30" id="Kyp-IU-33r"/>
+                        </constraints>
+                    </imageView>
+                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="FsP-zN-9zw">
+                        <rect key="frame" x="65" y="15" width="308" height="54"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Data" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hk2-lh-vSl">
+                                <rect key="frame" x="0.0" y="0.0" width="308" height="33.666666666666664"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="23.03.01" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aNO-iX-sux">
+                                <rect key="frame" x="0.0" y="33.666666666666664" width="308" height="20.333333333333336"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="hk2-lh-vSl" secondAttribute="trailing" id="FPx-yD-l59"/>
+                            <constraint firstItem="hk2-lh-vSl" firstAttribute="leading" secondItem="FsP-zN-9zw" secondAttribute="leading" id="Qqp-lg-fdL"/>
+                        </constraints>
+                    </stackView>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="Y9K-8f-zun" firstAttribute="centerY" secondItem="Biq-i4-ELe" secondAttribute="centerY" id="0mj-uC-jbU"/>
+                    <constraint firstAttribute="trailing" secondItem="FsP-zN-9zw" secondAttribute="trailing" constant="20" id="OaT-GJ-FNW"/>
+                    <constraint firstAttribute="bottom" secondItem="FsP-zN-9zw" secondAttribute="bottom" constant="15" id="Tgh-E0-Q6r"/>
+                    <constraint firstItem="FsP-zN-9zw" firstAttribute="leading" secondItem="Y9K-8f-zun" secondAttribute="trailing" constant="15" id="TpM-yJ-qiz"/>
+                    <constraint firstItem="FsP-zN-9zw" firstAttribute="top" secondItem="Biq-i4-ELe" secondAttribute="top" constant="15" id="pTB-ik-Roh"/>
+                    <constraint firstItem="Y9K-8f-zun" firstAttribute="leading" secondItem="Biq-i4-ELe" secondAttribute="leading" constant="20" id="q2O-bK-JXj"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="cellIcon" destination="Y9K-8f-zun" id="zaL-Fm-DGz"/>
+                <outlet property="qrData" destination="hk2-lh-vSl" id="9Dk-em-g6M"/>
+                <outlet property="regDate" destination="aNO-iX-sux" id="7Rg-qW-smR"/>
+            </connections>
+            <point key="canvasLocation" x="-54.198473282442748" y="14.788732394366198"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="history_icon" width="170.66667175292969" height="170.66667175292969"/>
+    </resources>
+</document>
